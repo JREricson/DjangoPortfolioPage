@@ -4,4 +4,7 @@ from . import views
 
 app_name = "programming_projects"
 
-urlpatterns = [path("", views.home, name="home")]
+
+urlpatterns = [
+    path("", views.home, name="hometest"),
+]

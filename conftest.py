@@ -1,5 +1,5 @@
 pytest_plugins = [
-    # "ecommerce.tests.fixtures",
-    # "ecommerce.tests.selenium",
-    # "ecommerce.tests.factories",
+    "portfolioSite.tests.fixtures",
+    "portfolioSite.tests.selenium",
+    # "portfolioSite.tests.factories",
 ]

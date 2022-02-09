@@ -27,8 +27,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # project apps
-    "portfolioSite.applications.programmingProjects"
+    "portfolioSite.applications.mainSite",
+    "portfolioSite.applications.programmingProjects",
+    "portfolioSite.applications.testingApp",
     # external apps
+    "crispy_forms",
+    "mptt",
 ]
 
 MIDDLEWARE = [
@@ -66,27 +70,38 @@ WSGI_APPLICATION = "portfolioSite.wsgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 # DATABASES = {
-#     "default": {
+#     "default": portfoliotestingApp{
 #         "ENGINE": "django.db.backends.sqlite3",
 #         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
 
+# DATABASES = {
+#     'default':  {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': config('DATABASE_PW'),
+#         'HOST': config('DATABASE_HOST'),
+#         'PORT': '5432',
+# }
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': config('DATABASE_PW'),
-        'HOST': config('DATABASE_HOST'),
-        'PORT': '5432'
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": config("DATABASE_PW"),
+        "HOST": config("DATABASE_HOST"),
+        "PORT": "5432",
+    }
 }
-
-
 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -102,8 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -125,3 +138,11 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# ///////////////////////////////////////////////////////////
+
+FIXTURE_DIRS = ["portfolioSite/applications/testingApp/tests/fixtures"]
+
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+LOGIN_REDIRECT_URL = "main_site:main_site_home"

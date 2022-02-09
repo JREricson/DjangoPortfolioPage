@@ -1,0 +1,12 @@
+[
+    { "model": "auth.user",
+    "pk": 1,
+    "fields":{
+    "username": "admin",
+    "password": "pbkdf2_sha256$320000$BRwtTbDmX79cKEDVSKF0t9$3m+D9hq0hZPKezgd7ZhhwX7DS428dkpGPvhvRC7zWpg=",
+    "email": "a@a.com",
+    "is_superuser": true,
+    "is_staff": true,
+    "is_active": true
+    }
+   }portfolioSite

@@ -19,4 +19,6 @@ def chrome_browser_instance(request):
     s = Service(ChromeDriverManager().install())
     browser = webdriver.Chrome(service=s, options=options)
     yield browser
-    browser.close()
+
+
+# browser.close()
