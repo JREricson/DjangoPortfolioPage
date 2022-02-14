@@ -139,3 +139,5 @@ GitHub.sublime-settings
 
 #my files
 notes.txt
+
+/migrations
